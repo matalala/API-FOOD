@@ -1,6 +1,8 @@
 const getAll =require('../controler/GetAll.js')
 
 async function GetAll(req,res){
+    var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+    console.log(ip)
     const todo=await getAll()
     const {name}=req.query
     if(name){
