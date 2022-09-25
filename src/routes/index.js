@@ -18,5 +18,10 @@ router.get('/api',getApi)
 router.get('/BD',GetDB)
 router.get('/diets',Getdiets)
 router.post('/recipes',PostRecipes)
+router.get('/visitas',async (req,res)=>{
+    const {Visitas}=require('../db.js')
+    let IP= await Visitas.findAll({})
+    res.json(IP)
+})
 
 module.exports = router;

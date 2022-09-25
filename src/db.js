@@ -32,7 +32,8 @@ const {
           keepAlive: true,
         },
         ssl: true,
-      })
+        logging: false, native: false
+      },  )
      
 const basename = path.basename(__filename);
 
